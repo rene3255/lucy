@@ -67,16 +67,18 @@ WSGI_APPLICATION = "lucy_core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": dj_database_url.parse(config("DATABASE_URL")),
+    }
 
-DATABASES["default"] = dj_database_url.parse(
-    "postgresql://lucydb_25ic_user:sj723KHwgfoXftA4uBTrFFGqReIYP8Up@dpg-d04ot1euk2gs73dth490-a.oregon-postgres.render.com/lucydb_25ic"
-)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
