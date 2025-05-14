@@ -9,6 +9,14 @@ DATABASES = {
     "default": dj_database_url.parse(config("DATABASE_URL")),
 }
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [(config("REDIS_HOST"), 6379)],
+        },
+    },
+}
 SECURE_HSTS_SECONDS = 3600
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True

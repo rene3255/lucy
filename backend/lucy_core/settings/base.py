@@ -52,6 +52,7 @@ TEMPLATES = [
     },
 ]
 
+
 ASGI_APPLICATION = "lucy_core.asgi.application"
 
 DAPHNE_SERVE_STATIC = True
