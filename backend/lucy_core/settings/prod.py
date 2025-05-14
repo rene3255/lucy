@@ -1,10 +1,9 @@
 from .base import *
-
+import dj_database_url
 from decouple import config
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
-print("Estamos en PRODUCCION")
 DATABASES = {
     "default": dj_database_url.parse(config("DATABASE_URL")),
 }
