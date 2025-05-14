@@ -9,6 +9,8 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 INSTALLED_APPS = [
+    "daphne",
+    "channels",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -16,6 +18,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Third party libraries
+    "django_extensions",
+    "corsheaders",
     # Custom apps
     "applications",
 ]
@@ -48,7 +52,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "lucy_core.wsgi.application"
+ASGI_APPLICATION = "lucy_core.asgi.application"
+
+DAPHNE_SERVE_STATIC = True
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -70,14 +76,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "es-mx"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "America/Mexico_City"
 
 USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
