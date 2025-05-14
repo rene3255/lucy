@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # Custom apps
     "applications",
+    "applications.lucyschat",
 ]
 
 MIDDLEWARE = [
