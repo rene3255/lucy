@@ -1,6 +1,7 @@
 import dj_database_url
 from decouple import config
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -9,8 +10,8 @@ SECRET_KEY = config("SECRET_KEY")
 
 
 INSTALLED_APPS = [
-    "daphne",
     "channels",
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,7 +41,7 @@ ROOT_URLCONF = "lucy_core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -55,8 +56,6 @@ TEMPLATES = [
 
 
 ASGI_APPLICATION = "lucy_core.asgi.application"
-
-DAPHNE_SERVE_STATIC = True
 
 
 AUTH_PASSWORD_VALIDATORS = [

@@ -139,3 +139,4 @@ GitHub.sublime-settings
 # Custon ignores
 documentation.md
 diary.md
+staticfiles/

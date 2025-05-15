@@ -4,7 +4,8 @@ from decouple import config
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 print("DEBUG EN DEV", DEBUG)
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+print("ALLOWED_HOSTS =", ALLOWED_HOSTS)
 
 DATABASES = {
     "default": {
@@ -16,12 +17,8 @@ DATABASES = {
         "PORT": config("DB_PORT"),
     }
 }
-
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
-        },
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
     },
 }
