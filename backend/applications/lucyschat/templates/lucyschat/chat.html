@@ -24,7 +24,6 @@
         const messageDiv = document.getElementById('messages');
         const messageInput = document.getElementById('messageInput');
         let protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
-        // let url = 'ws://localhost:8000/ws/chat/';
         let url =  protocol +  window.location.host + '/ws/chat/';
         // const socket = new WebSocket(url);
         const socket = new WebSocket(url);

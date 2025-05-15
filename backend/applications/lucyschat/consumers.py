@@ -23,7 +23,9 @@ class ChatConsumerGeneral(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         try:
             data = json.loads(text_data)
-            message = data.get("message", "")
+            message = data.get("message", "").strip()
+            if not message:
+                return
         except json.JSONDecodeError:
             await self.send(json.dumps({"error": "Paquete de datos inválido"}))
             return

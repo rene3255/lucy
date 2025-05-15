@@ -1,7 +1,5 @@
 from django.urls import re_path
-from applications.lucyschat.consumers import (
-    ChatConsumerGeneral,
-)
+from applications.lucyschat.consumers import ChatConsumerGeneral
 from decouple import config
 
 # from chat.consumers import ChatConsumer
