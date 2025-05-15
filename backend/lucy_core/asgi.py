@@ -10,7 +10,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
 from channels.sessions import SessionMiddlewareStack
 
-from .routing import websocket_urlpatterns
+from lucy_core.routing import websocket_urlpatterns
 from . import urls
 
 middleware_stack = (
