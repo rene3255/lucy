@@ -4,7 +4,7 @@ from decouple import config
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 print("EN PROD ", DEBUG)
-ALLOWED_HOSTS = config("ALLOWED_HOSTS")
+ALLOWED_HOSTS = (config("ALLOWED_HOSTS"),)
 DATABASES = {
     "default": dj_database_url.parse(config("DATABASE_URL")),
 }
