@@ -11,7 +11,7 @@ from decouple import config
 
 if config("AUTH_MIDDLE") == "True":
     websocket_urlpatterns = [
-        re_path(r"ws/chat/$", ChatConsumer.as_asgi()),
+        re_path(r"ws/chat/$", ChatConsumerGeneral.as_asgi()),
         # re_path(r"ws/notifications/$", NotificationConsumer.as_asgi()),
     ]
 else:
