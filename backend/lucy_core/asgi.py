@@ -4,7 +4,7 @@ from decouple import config
 from django.core.asgi import get_asgi_application
 
 ## setting_module = config("DJANGO_SETTINGS_MODULE")
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", default="lucy_core.settings.prod")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lucy_core.settings.prod")
 django.setup()
 
 
