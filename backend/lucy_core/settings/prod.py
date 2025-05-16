@@ -13,7 +13,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [(config("REDIS_HOST"), int(config("REDIS_PORT")))],
+            "hosts": [("lucy-pr3k.onrender.com", 6379)],
         },
     },
 }
