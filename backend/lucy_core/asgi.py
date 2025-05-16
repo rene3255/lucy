@@ -2,7 +2,8 @@ import os
 from decouple import config
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lucy_core.settings.prod")
+## setting_module = config("DJANGO_SETTINGS_MODULE")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", default="lucy_core.settings.prod")
 django_application = get_asgi_application()
 
 auth_middle = config("AUTH_MIDDLE", default="True")
