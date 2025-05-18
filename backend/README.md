@@ -10,7 +10,7 @@
 
 - 3.- Desarrollar funcionalidades básicas de mercado y comunidad para conectar a los usuarios con eventos, intercambios y referencias de valor, ampliando las posibilidades de interacción y aprendizaje colectivo.
 
-![Principales hitos](https://drive.google.com/file/d/1_XYcaQYM7PQy5MIDj5lypB2lzE2MXzhN/view?usp=drive_link)
+![Principales hitos](https://drive.google.com/uc?export=view&id=1_XYcaQYM7PQy5MIDj5lypB2lzE2MXzhN)
 
 # Historias de Usuario
 
