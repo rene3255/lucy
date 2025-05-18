@@ -3,10 +3,11 @@ import django
 from decouple import config
 from django.core.asgi import get_asgi_application
 
-## setting_module = config("DJANGO_SETTINGS_MODULE")
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lucy_core.settings.prod")
-django.setup()
+setting_module = config("DJANGO_SETTINGS_MODULE")
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", f"{setting_module}")
+django.setup()
+print("DJANGO_SETTINGS_MODULE_IN ASGI FILE", setting_module)
 
 auth_middle = config("AUTH_MIDDLE", default="True")
 from channels.routing import ProtocolTypeRouter, URLRouter
