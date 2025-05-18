@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     # Custom apps
     "applications",
     "applications.lucyschat",
+    "applications.users",
 ]
 
 MIDDLEWARE = [

@@ -45,12 +45,16 @@
             case 'chat':
                 console.log('Received message:', data.message);
                 addMessage(data.message);
+                
+            
+            case 'server':
+                console.log("message from SERVER");
+                addMessage(`[SERVER] ${data.message}`);
                 break;
-        
             case 'error':
                 console.error('Error:', data.error);
                 addMessage('Error: ', data.error);
-                break
+                break;
             default:
                 console.warn('Tipo de mensaje desconocido:',data.type)
             }  
