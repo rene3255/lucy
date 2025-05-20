@@ -19,24 +19,18 @@ class ChatConsumerGeneral(AsyncWebsocketConsumer):
                 }
             )
         )
-
     async def receive(self, text_data):
-        try:
-            data = json.loads(text_data)
-            message = data.get("message", "").strip()
-            if not message:
-                return
-        except json.JSONDecodeError:
-            await self.send(json.dumps({"error": "Paquete de datos inválido"}))
-            return
+        data = json.loads(text_data)
+        message = data["message"]
+       
         await self.channel_layer.group_send(
             self.room_group_name,
             {
                 "type": "chat_message",
-                "message": message,
-            },
+                "message": message
+            }
         )
-
+    
     async def chat_message(self, event):
         await self.send(
             json.dumps(
@@ -48,11 +42,9 @@ class ChatConsumerGeneral(AsyncWebsocketConsumer):
         )
 
     async def disconnect(self, close_code):
-        await self.channel_layer.group_discard(
-            self.room_group_name,
-            self.channel_name,
-        )
-
+        await  self.channel_layer.group_discard(
+               self.room_group_name,
+               self.channel_name)
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):

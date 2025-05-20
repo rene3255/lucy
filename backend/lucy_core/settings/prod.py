@@ -4,16 +4,14 @@ from decouple import config
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = (config("ALLOWED_HOSTS"),)
-DATABASES = {
-    "default": dj_database_url.parse(config("DATABASE_URL")),
-}
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
+
 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("lucy-pr3k.onrender.com", 6379)],
+            "hosts": ["redis://:lucychat1234@137.184.49.56:6379/0"],
             "channel_capacity": {
                 "http.request": 1000,
                 "http.response!*": 1000,
