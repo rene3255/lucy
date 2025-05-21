@@ -14,11 +14,6 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
             "hosts": [("lucy-pr3k.onrender.com", 6379)],
-            "channel_capacity": {
-                "http.request": 1000,
-                "http.response!*": 1000,
-                "websocket.send": 1000,
-            },
         },
     },
 }
