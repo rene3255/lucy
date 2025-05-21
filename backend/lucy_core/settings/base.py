@@ -23,8 +23,10 @@ INSTALLED_APPS = [
     "corsheaders",
     # Custom apps
     "applications",
+    "applications.abstracts",
     "applications.lucyschat",
     "applications.users",
+    "applications.reference_data",
 ]
 
 MIDDLEWARE = [
