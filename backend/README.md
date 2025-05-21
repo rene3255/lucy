@@ -8,7 +8,9 @@
 
 - 2.- Facilitar la organización y registro digital de colecciones de forma simple e intuitiva, promoviendo el sentido de propiedad y seguimiento del crecimiento de sus activos físicos.
 
-- 3.- Desarrollar funcionalidades básicas de mercado y comunidad para conectar a los usuarios con eventos, intercambios y referencias de valor, ampliando las posibilidades de interacción y aprendizaje colectivo.
+- 3.- Desarrollar funcionalidades básicas de mercado y comunidad para conectar a los **usuarios** con eventos, intercambios y referencias de valor, ampliando las posibilidades de interacción y aprendizaje colectivo.
+
+![Principales hitos](https://drive.google.com/uc?export=view&id=1_XYcaQYM7PQy5MIDj5lypB2lzE2MXzhN)
 
 # Historias de Usuario
 
@@ -25,3 +27,37 @@
 - 1.- Opción de seleccionar el tipo de usuario al registrarse.
 - 2.- La interfaz muestra contenido según la elección.
 - 3.- Posibilidad de actualizar el rol desde el perfil.
+
+# Instalación del proyecto Lucy
+## Requisitos 
+- Python 3.10 o superior
+- Git instalado
+- Se recomienda un entorno virtual (como venv o virtualenv)
+- Pip actualizado
+
+## 1 Clonar el repositorio
+- SSH protocol
+- `git@github.com:rene3255/lucy.git`
+- HTTPS 
+- `https://github.com/rene3255/lucy.git`
+Una vez clonado el proyecto moverse al folder lucy
+## 2 Crear entorno virtual
+- `python3 -m venv env --prompt=Lucy`
+- Activa el entorno virtual
+- `source env/bin/activate`
+- en Windows:
+    `venv/Script/activate`
+## 3 Instalar dependencias
+- `pip install -r requirements.txt`
+## 4 Configurar variables de entorno
+- Crear un archivo .env (archivo oculto)en la raíz del proyecto y agregar las variables necesarias por ejemplo: 
+    - DEBUG=True
+    - SECRET_KEY=tu_clave_secreta
+    - DATABASE_URL=sqlite:///db.sqlite3
+## 5 Migrar la base de datos
+- `python manage.py migrate`
+## 6 Crear un usuario administrador
+- python manage.py runserver
+  
+- Abre tu navegador y visita: http://localhost:8000
+  
