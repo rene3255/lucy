@@ -4,16 +4,30 @@ from decouple import config
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = (config("ALLOWED_HOSTS"),)
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
+
 DATABASES = {
-    "default": dj_database_url.parse(config("DATABASE_URL")),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "HOST": config("DB_HOST"),
+        "PORT": config("DB_PORT"),
+    }
 }
+
 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("lucy-pr3k.onrender.com", 6379)],
+            "hosts": ["redis://:lucychat1234@137.184.49.56:6379/0"],
+            "channel_capacity": {
+                "http.request": 1000,
+                "http.response!*": 1000,
+                "websocket.send": 1000,
+            },
         },
     },
 }
