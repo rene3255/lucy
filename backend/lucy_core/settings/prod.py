@@ -1,19 +1,22 @@
 from .base import *
 import dj_database_url
-from decouple import config
+import environ
 
-DEBUG = config("DEBUG", default=False, cast=bool)
+env = environ.Env()
+environ.Env.read_env()
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
+DEBUG = env.bool("DEBUG", default=False)
+
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-        "PASSWORD": config("DB_PASSWORD"),
-        "HOST": config("DB_HOST"),
-        "PORT": config("DB_PORT"),
+        "NAME": env("DB_NAME"),
+        "USER": env("DB_USER"),
+        "PASSWORD": env("DB_PASSWORD"),
+        "HOST": env("DB_HOST"),
+        "PORT": env("DB_PORT"),
     }
 }
 

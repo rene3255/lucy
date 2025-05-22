@@ -1,8 +1,11 @@
 from .base import *
-from decouple import config
+import environ
 
+env = environ.Env()
+environ.Env.read_env()
 
-DEBUG = config("DEBUG", default=False, cast=bool)
+DEBUG = env.bool("DEBUG", default=False)
+
 print("DEBUG EN DEV", DEBUG)
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 print("ALLOWED_HOSTS =", ALLOWED_HOSTS)
