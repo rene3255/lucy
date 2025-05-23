@@ -1,13 +1,8 @@
 import os
 import django
-import environ
 
-env = environ.Env()
-environ.Env.read_env()
-setting_module = env("DJANGO_SETTINGS_MODULE", default="lucy_core.settings.dev")
-os.environ["DJANGO_SETTINGS_MODULE"] = setting_module
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lucy_core.settings")
 
-print("EUREKA", setting_module)
 
 django.setup()
 

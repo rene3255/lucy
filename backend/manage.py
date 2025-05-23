@@ -2,20 +2,10 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from decouple import config
 
 
 def main():
-    """Run administrative tasks."""
-    setting_module = config(
-        "DJANGO_SETTINGS_MODULE",
-        config("DJANGO_SETTINGS_MODULE", default="lucy_core.settings.dev"),
-    )
-    os.environ.setdefault(
-        "DJANGO_SETTINGS_MODULE",
-        setting_module,
-    )
-    print("INSIDE OF MANAGER", setting_module)
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lucy_core.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
