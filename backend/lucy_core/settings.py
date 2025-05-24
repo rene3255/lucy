@@ -95,24 +95,26 @@ if DEBUG:
 else:
     DATABASES = {"default": env.db("DATABASE_URL")}
 
-if DEBUG:
-    CHANNEL_LAYERS = {"default": {"BACKEND": "channels.layers.InMemoryChannelLayer"}}
+# if DEBUG:
+#   CHANNEL_LAYERS = {"default": {"BACKEND": "channels.layers.InMemoryChannelLayer"}}
 
-else:
+# else:
 
-    CHANNEL_LAYERS = {
-        "default": {
-            "BACKEND": "channels_redis.core.RedisChannelLayer",
-            "CONFIG": {
-                "hosts": [env("REDIS_URL")],
-                "channel_capacity": {
-                    "http.request": 1000,
-                    "http.response!*": 1000,
-                    "websocket.send": 1000,
-                },
+REDIS_URL = os.environ.get("REDIS_URL", "redis://localhost:6379")
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [REDIS_URL],
+            "channel_capacity": {
+                "http.request": 1000,
+                "http.response!*": 1000,
+                "websocket.send": 1000,
             },
         },
-    }
+    },
+}
 
 WEBSOCKET_TIMEOUT = 180
 ASGI_THREADS = 4
