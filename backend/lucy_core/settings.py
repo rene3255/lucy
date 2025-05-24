@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "applications.lucyschat",
     "applications.users",
     "applications.reference_data",
+    "applications.lucy",
 ]
 
 MIDDLEWARE = [
