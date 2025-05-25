@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 import environ
+from datetime import timedelta
 
 env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,6 +11,17 @@ env.read_env(env_file)
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["127.0.0.1", "localhost"])
+
+SPECTACULAR_SETTINGS = {
+    "TAGS": [
+        {
+            "name": "Lucy API Services",  # <--- This will replace 'default'
+            "description": "Puntos de Acceso inherentes a los medios para impulsar las finanzas y ahorros personales",
+        },
+        # Add more tags here if needed
+    ],
+}
+
 
 INSTALLED_APPS = [
     "channels",
@@ -23,6 +35,9 @@ INSTALLED_APPS = [
     # Third party libraries
     "django_extensions",
     "corsheaders",
+    "rest_framework",
+    "drf_spectacular",
+    "rest_framework_simplejwt",
     # Custom apps
     "applications",
     "applications.abstracts",
@@ -119,6 +134,46 @@ CHANNEL_LAYERS = {
 
 WEBSOCKET_TIMEOUT = 180
 ASGI_THREADS = 4
+
+
+if DEBUG:  # Development
+
+    REST_FRAMEWORK = {
+        "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.SessionAuthentication",
+            "rest_framework_simplejwt.authentication.JWTAuthentication",
+        ],
+        "DEFAULT_PERMISSION_CLASSES": [
+            "rest_framework.permissions.IsAuthenticated",  # Require authentication for all views
+        ],
+    }
+else:  # Production
+    REST_FRAMEWORK = {
+        "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework_simplejwt.authentication.JWTAuthentication",
+        ],
+        "DEFAULT_PERMISSION_CLASSES": [
+            "rest_framework.permissions.IsAuthenticated",  # Require authentication for all views
+        ],
+    }
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=2),  # Adjust as needed
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=2),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": "your_secret_key",  # Change this to a secure secret
+    "VERIFYING_KEY": None,
+    "AUDIENCE": None,
+    "ISSUER": None,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "user_id",
+}
+
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
