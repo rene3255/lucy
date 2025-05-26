@@ -59,6 +59,7 @@ MIDDLEWARE = [
     # "applications.lucy.middleware.security_headers.SecurityHeaderMiddleware",
 ]
 
+AUTH_USER_MODEL = "users.User"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ROOT_URLCONF = "lucy_core.urls"
