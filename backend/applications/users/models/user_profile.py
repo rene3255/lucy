@@ -1,7 +1,5 @@
 from django.db import models
 from applications.users.models.users import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 from applications.reference_data.models.countries import Country
 from applications.reference_data.enums.salary_range import SalaryRange
 from applications.abstracts.models.global_abastract_model import AbstractModel
