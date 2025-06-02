@@ -1,6 +1,6 @@
 from django.db import models
 from applications.users.models.users import User
-from applications.reference_data.models.countries import Country
+from applications.reference_data.models.country import Country
 from applications.reference_data.enums.salary_range import SalaryRange
 from applications.abstracts.models.global_abastract_model import AbstractModel
 

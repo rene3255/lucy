@@ -1,5 +1,5 @@
 from rest_framework.permissions import BasePermission
-from applications.reference_data.enums.user_type import UserRole
+from applications.reference_data.enums.user_role import UserRole
 
 """
 SUPER_ADMIN = "superadmin", "Super Admin"

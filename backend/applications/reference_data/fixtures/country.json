@@ -1,0 +1,110 @@
+[
+  {
+    "model": "reference_data.country",
+    "pk": 6,
+    "fields": {
+      "country": "Colombia",
+      "country_code": "CO",
+      "flag_url": "https://flagcdn.com/w320/co.png",
+      "is_active": true,
+      "created_at": "2024-01-06T00:00:00Z",
+      "updated_at": "2024-01-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 7,
+    "fields": {
+      "country": "Costa Rica",
+      "country_code": "CR",
+      "flag_url": "https://flagcdn.com/w320/cr.png",
+      "is_active": true,
+      "created_at": "2024-01-07T00:00:00Z",
+      "updated_at": "2024-01-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 8,
+    "fields": {
+      "country": "Ecuador",
+      "country_code": "EC",
+      "flag_url": "https://flagcdn.com/w320/ec.png",
+      "is_active": true,
+      "created_at": "2024-01-08T00:00:00Z",
+      "updated_at": "2024-01-08T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 9,
+    "fields": {
+      "country": "Venezuela",
+      "country_code": "VE",
+      "flag_url": "https://flagcdn.com/w320/ve.png",
+      "is_active": true,
+      "created_at": "2024-01-09T00:00:00Z",
+      "updated_at": "2024-01-09T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 10,
+    "fields": {
+      "country": "Panamá",
+      "country_code": "PA",
+      "flag_url": "https://flagcdn.com/w320/pa.png",
+      "is_active": true,
+      "created_at": "2024-01-10T00:00:00Z",
+      "updated_at": "2024-01-10T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 11,
+    "fields": {
+      "country": "República Dominicana",
+      "country_code": "DO",
+      "flag_url": "https://flagcdn.com/w320/do.png",
+      "is_active": true,
+      "created_at": "2024-01-11T00:00:00Z",
+      "updated_at": "2024-01-11T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 12,
+    "fields": {
+      "country": "El Salvador",
+      "country_code": "SV",
+      "flag_url": "https://flagcdn.com/w320/sv.png",
+      "is_active": true,
+      "created_at": "2024-01-12T00:00:00Z",
+      "updated_at": "2024-01-12T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 13,
+    "fields": {
+      "country": "Uruguay",
+      "country_code": "UY",
+      "flag_url": "https://flagcdn.com/w320/uy.png",
+      "is_active": true,
+      "created_at": "2024-01-13T00:00:00Z",
+      "updated_at": "2024-01-13T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.country",
+    "pk": 14,
+    "fields": {
+      "country": "Paraguay",
+      "country_code": "PY",
+      "flag_url": "https://flagcdn.com/w320/py.png",
+      "is_active": true,
+      "created_at": "2024-01-14T00:00:00Z",
+      "updated_at": "2024-01-14T00:00:00Z"
+    }
+  }
+]

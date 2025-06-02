@@ -1,3 +1,4 @@
+.PHONY: delete-all-migrations run mkmig mig load-metaltypes load-countries
 APPS_NAME := $(shell find . -maxdepth 3 -type d -name migrations -exec dirname {} \; | sed 's|^\./||' | sort | uniq)
 
 delete-all-migrations:
@@ -18,6 +19,9 @@ mkmig:
 	pip install --upgrade pip && \
 	python manage.py makemigrations 
 
-
 mig:
-	python manage.py makemigrations
+	python manage.py migrate
+load-metaltypes:
+	python manage.py loaddata applications/reference_data/fixtures/metal_type.json
+load-countries:
+	python manage.py loaddata applications/reference_data/fixtures/country.json

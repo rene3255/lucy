@@ -11,7 +11,7 @@ from drf_spectacular.utils import extend_schema
 class LoginViewSet(viewsets.ViewSet):
     serializer_class = LoginSerializer
     permission_classes = [AllowAny]
-    http_method_names = ["post"]
+    http_method_names = ["post"]  # collection-base-model-implementation
 
     def create(self, request):
         serializer = LoginSerializer(data=request.data)

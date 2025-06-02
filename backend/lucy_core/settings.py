@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "applications.users",
     "applications.reference_data",
     "applications.lucy",
+    "applications.assets",
 ]
 
 MIDDLEWARE = [

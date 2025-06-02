@@ -11,7 +11,6 @@ class UserInfoSerializer(serializers.ModelSerializer):
             "id",
             "username",
             "role",
-            "privilege",
             "email",
             "first_name",
             "last_name",

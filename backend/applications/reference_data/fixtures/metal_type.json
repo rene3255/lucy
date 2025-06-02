@@ -1,0 +1,72 @@
+[
+  {
+    "model": "reference_data.metaltype",
+    "pk": 1,
+    "fields": {
+      "name": "Oro",
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.metaltype",
+    "pk": 2,
+    "fields": {
+      "name": "Plata",
+      "is_active": true,
+      "created_at": "2024-01-02T00:00:00Z",
+      "updated_at": "2024-01-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.metaltype",
+    "pk": 3,
+    "fields": {
+      "name": "Cobre",
+      "is_active": true,
+      "created_at": "2024-01-03T00:00:00Z",
+      "updated_at": "2024-01-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.metaltype",
+    "pk": 4,
+    "fields": {
+      "name": "Bronce",
+      "is_active": true,
+      "created_at": "2024-01-04T00:00:00Z",
+      "updated_at": "2024-01-04T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.metaltype",
+    "pk": 5,
+    "fields": {
+      "name": "Platino",
+      "is_active": true,
+      "created_at": "2024-01-05T00:00:00Z",
+      "updated_at": "2024-01-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.metaltype",
+    "pk": 6,
+    "fields": {
+      "name": "Aluminio",
+      "is_active": true,
+      "created_at": "2024-01-06T00:00:00Z",
+      "updated_at": "2024-01-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.metaltype",
+    "pk": 7,
+    "fields": {
+      "name": "Nickel",
+      "is_active": true,
+      "created_at": "2024-01-07T00:00:00Z",
+      "updated_at": "2024-01-07T00:00:00Z"
+    }
+  }
+]

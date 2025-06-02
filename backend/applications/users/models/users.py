@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
 from applications.users.managers import UserManager
-from applications.reference_data.enums.user_type import UserRole
+from applications.reference_data.enums.user_role import UserRole
 
 
 class User(AbstractBaseUser, PermissionsMixin):
