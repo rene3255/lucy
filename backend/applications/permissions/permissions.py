@@ -27,3 +27,28 @@ class IsLucyEmployee(BasePermission):
                 UserRole.REGULAR_USER,
             ]
         )
+
+
+class IsRegularUser(BasePermission):
+    def has_permission(self, request, view):
+        if not request.user.is_authenticated:
+            return False
+
+        return request.user.is_active or request.user.role in [
+            UserRole.REGULAR_USER,
+        ]
+
+
+class IsAdminUser(BasePermission):
+    def has_permission(self, request, view):
+        if not request.user.is_authenticated:
+            return False
+
+        return (
+            request.user.is_staff
+            or request.user.is_active
+            or request.user.role
+            in [
+                UserRole.ADMIN,
+            ]
+        )

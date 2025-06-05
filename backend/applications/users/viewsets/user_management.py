@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
-from applications.permissions.is_lucy_employee import IsLucyEmployee
+from applications.permissions.permissions import IsLucyEmployee
 from applications.users.serializers.user_registration import UserRegistrationSerializer
 from applications.users.serializers.user_detail import UserDetailSerializer
 from applications.users.models.users import User

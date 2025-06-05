@@ -33,4 +33,4 @@ class Metal(AbstractAssetBaseModel):
         verbose_name_plural = "Metals"
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.title} elaborado en {self.metal_type.name}"

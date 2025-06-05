@@ -25,4 +25,5 @@ urlpatterns = [
     path("", include("applications.lucy.urls")),
     path("chat/", include("applications.lucyschat.urls")),
     path("api/", include("applications.users.urls")),
+    path("api/", include("applications.assets.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

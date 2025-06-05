@@ -3,7 +3,7 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from applications.permissions.is_lucy_employee import IsLucyEmployee
+from applications.permissions.permissions import IsLucyEmployee
 from applications.users.serializers.user_registration import UserRegistrationSerializer
 from applications.users.serializers.user_detail import UserDetailSerializer
 from applications.users.models.users import User
