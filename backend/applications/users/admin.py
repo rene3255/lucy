@@ -44,7 +44,7 @@ class CustomUserAdmin(BaseUserAdmin):
                     "email",
                     "first_name",
                     "last_name",
-                    "password",
+                    "username",
                     "role",
                     "password",
                     "is_staff",
