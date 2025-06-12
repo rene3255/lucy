@@ -4,8 +4,8 @@ from applications.users.models.users import User
 from applications.users.models.user_profile import UserProfile
 
 
-class CustomUserAdmin(admin.ModelAdmin):
-    model = User
+@admin.register(User)
+class CustomUserAdmin(BaseUserAdmin):
     list_display = [
         "email",
         "first_name",
@@ -14,7 +14,22 @@ class CustomUserAdmin(admin.ModelAdmin):
         "is_staff",
         "is_active",
     ]
-    fields = ["email", "first_name", "last_name", "password"]
+    fieldsets = (
+        (None, {"fields": ("email", "password")}),
+        ("Personal info", {"fields": ("first_name", "last_name")}),
+        ("Permissions", {"fields": ("is_active", "is_staff", "is_superuser")}),
+    )
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("email", "first_name", "last_name", "password"),
+            },
+        ),
+    )
+    search_fields = ("email", "first_name", "last_name")
+    ordering = ("email",)
 
     def save_model(self, request, obj, form, change):
 
@@ -24,5 +39,4 @@ class CustomUserAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(User, CustomUserAdmin)
 admin.site.register(UserProfile)
