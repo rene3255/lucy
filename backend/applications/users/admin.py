@@ -14,7 +14,7 @@ class CustomUserAdmin(admin.ModelAdmin):
         "is_staff",
         "is_active",
     ]
-    fields = ["email", "first_name", "last_name"]
+    fields = ["email", "first_name", "last_name", "password"]
 
     def save_model(self, request, obj, form, change):
 
