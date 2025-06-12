@@ -1,9 +1,11 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from applications.users.models.users import User
 from applications.users.models.user_profile import UserProfile
 
 
-class CustomUserAdmin(admin.ModelAdmin):
+class CustomUserAdmin(BaseUserAdmin):
+    model = User
     list_display = ["email", "username", "is_staff", "is_active"]
     fields = [
         "email",
