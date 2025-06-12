@@ -4,6 +4,9 @@ from applications.users.models.user_profile import UserProfile
 
 
 class CustomUserAdmin(admin.ModelAdmin):
+    list_display = ["email", "username", "is_staff", "is_active"]
+    fields = ["email", "username", "password", "is_staff", "is_active"]
+
     def save_model(self, request, obj, form, change):
         if not change:
             if hasattr(obj, "password") and obj.password:
