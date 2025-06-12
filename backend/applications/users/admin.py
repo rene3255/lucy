@@ -16,14 +16,9 @@ class CustomUserAdmin(admin.ModelAdmin):
     ]
 
     def save_model(self, request, obj, form, change):
-        if not change:
-            if hasattr(obj, "password") and obj.password:
-                if not obj.password.startswith("pbkdf2_"):
-                    obj.set_password(obj.password)
-        else:
-            if "password" in form.changed_data and obj.password:
-                if not obj.password.startswith("pbkdf2_"):
-                    obj.set_password(obj.password)
+
+        if not obj.password.startswith("pbkdf2_"):
+            obj.set_password(obj.password)
         super().save_model(request, obj, form, change)
 
 
