@@ -1,7 +1,9 @@
 from django.contrib import admin
 from applications.users.models.users import User
+from applications.users.models.user_profile import UserProfile
 
 
+@admin.register(User)
 class CustomUserAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         if not change:
@@ -16,4 +18,4 @@ class CustomUserAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(User, CustomUserAdmin)
+admin.site.register(UserProfile)
