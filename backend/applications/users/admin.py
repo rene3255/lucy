@@ -4,16 +4,17 @@ from applications.users.models.users import User
 from applications.users.models.user_profile import UserProfile
 
 
-class CustomUserAdmin(BaseUserAdmin):
+class CustomUserAdmin(admin.ModelAdmin):
     model = User
-    list_display = ["email", "username", "is_staff", "is_active"]
-    fieldsets = (
-        (
-            None,
-            {"fields": ("email", "first_name", "last_name", "password")},
-        ),
-        ("Permissions", {"fields": ("is_staff", "is_active")}),
-    )
+    list_display = [
+        "email",
+        "first_name",
+        "last_name",
+        "username",
+        "is_staff",
+        "is_active",
+    ]
+    fields = ["email", "first_name", "last_name"]
 
     def save_model(self, request, obj, form, change):
 
