@@ -1,0 +1,18 @@
+[
+  {
+    "model": "assets.coinbanknote",
+    "pk": 1,
+    "fields": {
+      "title": "Onza Libertad",
+      "image_url": "https://example.com/images/10-pesos.jpg",
+      "estimated_value": "800.00",
+      "coin_banknote": "COIN",
+      "year": 2016,
+      "country": 1,
+      "denomination": "Una onza plata pura 0.9999",
+      "created_at": "2025-06-01T00:00:00Z",
+      "updated_at": "2025-06-01T01:00:00Z",
+      "is_active": true
+    }
+  }
+]

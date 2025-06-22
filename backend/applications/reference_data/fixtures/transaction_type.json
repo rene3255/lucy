@@ -1,0 +1,42 @@
+[
+  {
+    "model": "reference_data.transactiontype",
+    "pk": 1,
+    "fields": {
+      "name": "Venta",
+      "is_active": true,
+      "created_at": "2025-01-01T10:00:00Z",
+      "updated_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.transactiontype",
+    "pk": 2,
+    "fields": {
+      "name": "Subasta",
+      "is_active": true,
+      "created_at": "2025-01-01T10:00:00Z",
+      "updated_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.transactiontype",
+    "pk": 3,
+    "fields": {
+      "name": "Intercambio",
+      "is_active": true,
+      "created_at": "2025-01-01T10:00:00Z",
+      "updated_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "reference_data.transactiontype",
+    "pk": 4,
+    "fields": {
+      "name": "Donación",
+      "is_active": true,
+      "created_at": "2025-01-01T10:00:00Z",
+      "updated_at": "2025-01-01T10:00:00Z"
+    }
+  }
+]

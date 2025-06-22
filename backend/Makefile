@@ -21,7 +21,7 @@ mkmig:
 
 mig:
 	python manage.py migrate
-load-metaltypes:
+loaddata:
 	python manage.py loaddata applications/reference_data/fixtures/metal_type.json
-load-countries:
 	python manage.py loaddata applications/reference_data/fixtures/country.json
+	python manage.py loaddata applications/reference_data/fixtures/transaction_type.json
