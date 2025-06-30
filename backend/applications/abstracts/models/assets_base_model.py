@@ -5,7 +5,6 @@ from .global_abastract_model import AbstractModel
 
 class AbstractAssetBaseModel(AbstractModel):
     title = models.CharField(max_length=150, blank=True, null=True)
-    image_url = models.URLField(blank=True, null=True)
     estimated_value = models.DecimalField(
         max_digits=6, decimal_places=2, blank=True, null=True
     )

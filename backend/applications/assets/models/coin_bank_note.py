@@ -1,13 +1,16 @@
 from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
 from django.core.validators import MinValueValidator, MaxValueValidator
 from datetime import datetime
 from applications.abstracts.managers.global_abstract_manager import AbstractManager
 from applications.abstracts.models.assets_base_model import AbstractAssetBaseModel
 from applications.reference_data.enums.coin_or_bank_note import CoinOrBankNote
 from applications.reference_data.models.country import Country
+from .media_asset import MediaAsset
 
 
 class CoinBankNote(AbstractAssetBaseModel):
+    digital_media = GenericRelation(MediaAsset)
     coin_banknote = models.CharField(max_length=20, choices=CoinOrBankNote.choices)
     year = models.IntegerField(
         validators=[MinValueValidator(1400), MaxValueValidator(datetime.now().year)]

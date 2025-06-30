@@ -1,13 +1,16 @@
 from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
 from applications.abstracts.models.assets_base_model import AbstractAssetBaseModel
 from applications.reference_data.enums.weight_unit import WeightUnit
 from django.core.validators import MinValueValidator, MaxValueValidator
 from applications.reference_data.enums.metal_form import MetalForm
 from applications.reference_data.models.metals_type import MetalType
 from applications.abstracts.managers.global_abstract_manager import AbstractManager
+from .media_asset import MediaAsset
 
 
 class Metal(AbstractAssetBaseModel):
+    digital_media = GenericRelation(MediaAsset)
     metal_type = models.ForeignKey(MetalType, on_delete=models.CASCADE)
     weight_in_grams = models.FloatField()
     weight_unit = models.CharField(
