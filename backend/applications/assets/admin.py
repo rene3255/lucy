@@ -8,5 +8,5 @@ from .models.content import Content
 
 admin.site.register(Metal)
 admin.site.register(CoinBankNote)
-admin.site.register(MediaAsset)
 admin.site.register(Content)
+admin.site.register(MediaAsset)
